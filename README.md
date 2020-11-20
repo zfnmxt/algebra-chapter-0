@@ -1,1 +1,1 @@
-# algebra-chapter-0
+Selected solutions to Paolo Aluffi's *Algebra: Chapter 0*.
