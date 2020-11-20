@@ -1,0 +1,56 @@
+\documentclass[a4paper]{report}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage[sc]{mathpazo}
+\linespread{1.05}        
+\usepackage[margin=1.25in, marginparwidth=2in]{geometry}
+\newenvironment{ex}[1]
+    {\noindent{\large \bf Exercise #1.}}{\vspace{0.5cm}}
+
+\begin{document}
+\begin{ex}{1.2}
+  Let $\sim$ be an equivalence relation on a set $S$. We need to show that $\mathcal{P}_\sim$ is a
+  set of non-empty disjoint sets whose union is $S$. Non-emptiness is easy: since $\sim$ is an
+  equivalence relation, $a \sim a$ for all $a \in S$ and we conclude $a \in [a]_\sim$ by the
+  definition of $[a]_\sim$.
+
+  Disjointness takes a bit more work. If $S = \varnothing$, then $P_\sim = \{\}$ is trivially
+  disjoint. Similarly, if $S = \{a\}$, then $P = \{[a]_\sim\} = \{\{a\}\}$ is disjoint. 
+
+  So, we now assume $|S| \geq 2$ and let $r, s \in S$ be distinct. For a contradiction, suppose that
+  there exists $c \in S$ and distinct $[r]_\sim, [s]_\sim \in \mathcal{P}_\sim$ such that $c \in
+  [r]_\sim$ and $c\in [s]_\sim$. Hence, $c \sim r$ and $c \sim s$. By the symmetry and transitivity
+  of $\sim$, $r \sim s$ and $s \sim r$. But this means that for any $x \in [r]_\sim$ and any $y \in
+  [s]_\sim$, we have $x \sim r$ from which it follows by transitivity that $x \sim s$ and,
+  similarly, $y \sim s$, from which it follows that $y \sim r$. We conclude that $[r]_\sim =
+  [s]_\sim$; by contradiction, $[r]_\sim, [s]_\sim$ must be disjoint.
+
+  Finally, suppose there exists $c \in S$ such that $c \notin \mathcal{P}_\sim$. But
+  $[c]_\sim \in \bigcup_{x \in S} [x]_\sim$ and $c \in [c]_\sim$ so it must be the case
+  that $\bigcup_{x \in S} [x]_\sim \subseteq S$. Now suppose that there exists $c \in \bigcup_{x \in S} [x]_\sim$
+  with $c \notin S$. There then exists a $r \in S$ such that $c \in [r]_\sim$. But 
+  \[
+    [r]_\sim = \{s \in S| s \sim r\}
+  \]
+   so $c \in S$ and $S \subseteq \bigcup_{x \in S} [x]_\sim$. We conclude $S = \bigcup_{x
+     \in S} [x]_\sim = \bigcup_{T \in P_{\sim}} T$ as required.
+\end{ex}
+
+\begin{ex}{1.3}
+  Let $a, b \in S$. Define $\sim$ by
+  \[
+    a \sim b \Longleftrightarrow (\exists T \in \mathcal{P}_\sim)~a, b \in T
+  \]
+  All that's left is to show $\sim$ satisfies the required properties.
+  \begin{itemize}
+    \item reflexivity: Let $a \in S$. Since the union of the sets of $\mathcal{P}_\sim$ is equal to $S$, there exists $T \in \mathcal{P}_\sim$ with $a \in T$. Hence, $a \sim a$.
+    \item symmetry: Let $a, b \in S$ and suppose $a \sim b$. Then $(\exists T \in \mathcal{P}_\sim)~a,b \in T$ from which we conclude $b \sim a$.
+    \item transitivity: Let $a, b, c \in S$ and suppose $a \sim b, b \sim c$. Then, $(\exists T \in \mathcal{P}_\sim)~a,b \in T$ and $(\exists U \in \mathcal{P}_\sim)~b,c \in U$.
+          But since $\mathcal{P}_\sim$ consists of disjoint sets, $T = U$ since $b$ is in both of them. Hence, $c \in T$ and we conclude $a \sim c$.
+  \end{itemize}
+\end{ex}
+\end{document}
