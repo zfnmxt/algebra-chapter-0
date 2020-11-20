@@ -47,10 +47,25 @@
   \]
   All that's left is to show $\sim$ satisfies the required properties.
   \begin{itemize}
-    \item reflexivity: Let $a \in S$. Since the union of the sets of $\mathcal{P}_\sim$ is equal to $S$, there exists $T \in \mathcal{P}_\sim$ with $a \in T$. Hence, $a \sim a$.
-    \item symmetry: Let $a, b \in S$ and suppose $a \sim b$. Then $(\exists T \in \mathcal{P}_\sim)~a,b \in T$ from which we conclude $b \sim a$.
-    \item transitivity: Let $a, b, c \in S$ and suppose $a \sim b, b \sim c$. Then, $(\exists T \in \mathcal{P}_\sim)~a,b \in T$ and $(\exists U \in \mathcal{P}_\sim)~b,c \in U$.
-          But since $\mathcal{P}_\sim$ consists of disjoint sets, $T = U$ since $b$ is in both of them. Hence, $c \in T$ and we conclude $a \sim c$.
+    \item reflexivity: Let $a \in S$. Since the union of the sets of $\mathcal{P}_\sim$ is equal to
+      $S$, there exists $T \in \mathcal{P}_\sim$ with $a \in T$. Hence, $a \sim a$.
+    \item symmetry: Let $a, b \in S$ and suppose $a \sim b$. Then $(\exists T \in
+      \mathcal{P}_\sim)~a,b \in T$ from which we conclude $b \sim a$.
+    \item transitivity: Let $a, b, c \in S$ and suppose $a \sim b, b \sim c$. Then, $(\exists T \in
+      \mathcal{P}_\sim)~a,b \in T$ and $(\exists U \in \mathcal{P}_\sim)~b,c \in U$.  But since
+      $\mathcal{P}_\sim$ consists of disjoint sets, $T = U$ since $b$ is in both of them. Hence, $c
+      \in T$ and we conclude $a \sim c$.
   \end{itemize}
+\end{ex}
+
+\begin{ex}{1.5}
+ Let $a, b \in \mathbb{N}$. Define $a~R~b$ by
+ \[
+   a~R~b \Longleftrightarrow |a - b| \leq 1
+  \]
+$R$ is clearly reflexive: for all $a \in \mathbb{N}$, $|a - a| = 0 \leq 1$. $R$ is symmetric since
+  $|x| = |-x|$ for any $x$. However, $R$ is \emph{not} transitive: let distinct $a, b, c \in
+  \mathbb{N}$ and $a~R~b$ and $b~R~c$. Then, $|a - b| = 1$ (since $a \neq b$) and similarly $|b - c| = 1$.
+  By the triangle inequality, $|a| - 1\geq |b| \leq |c| - 1$
 \end{ex}
 \end{document}
