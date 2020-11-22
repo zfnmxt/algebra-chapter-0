@@ -68,7 +68,7 @@
   \mathbb{N}$ and $a~R~b$ and $b~R~c$. Then, $|a - b| = 1$ (since $a \neq b$) and similarly $|b - c| = 1$. Hence,
   either $a - b = 1$ or $b - a = 1$. In the former case, $b - c = 1$ (since $c \neq a$) from which we conclude
   that $a - c = 2$ and in the later case, $c - b = 1$, and we have $c - a = 2$ again. Hence, $|a - c| = 2$ and thus
-  $a R c$ does not hold.
+  $a~R~c$ does not hold.
 \end{ex}
 
 \begin{ex}{1.6}
@@ -79,7 +79,31 @@
   \item transitivity: Let $a, b, c \in \mathbb{R}$ and suppose $a \sim b$ and $b \sim c$. Then $b-a \in \mathbb{Z}$ and $c - b \in \mathbb{Z}$. Since 
     $\mathbb{Z}$ is closed under addition, $c - a = (c-b) + (b - a) \in \mathbb{Z}$.
 
-    $\sim$ relates $a,b \in \mathbb{R}$ if they same post-decimal representation.
+    $\sim$ relates $a,b \in \mathbb{R}$ if they have the same post-decimal representation.
   \end{itemize}
+\end{ex}
+\begin{ex}{2.1}
+  A bijection $f : S \rightarrow S$ can be constructed iteratively as
+  follows. Set $D = T = S$.  Choose $s_1 \in D, s_1' \in T$ and set
+  $f(s_1) = s_1'$. Next, choose $s_2 \in D \setminus \{s_1\}, s_2' \in
+  T \setminus \{s_1'\}$ and set $f(s_2) = s_2'$.  Next, choose $s_3
+  \in D \setminus \{s_1, s_2\}, s_3' \in T \setminus \{s_1',s_2'\}$
+  and set $f(s_3) = s_3'$.  Continue in this manner for $n$ steps
+  (until $D = T = \varnothing$).
+
+  Clearly, $f$ is a bijection. If $s, s' \in S$, then $f(s) = f(s')
+  \Rightarrow s = s'$ by construction.  Similarly, since the algorithm
+  continues until $T = \varnothing$, $f$ must also be surjective.  The
+  algorithm allows for $n!$ different constructions of $f$. There only
+  question that remains is if there exists a bijection $g : S
+  \rightarrow S$ which cannot be constructed in such a fashion.
+  But $g$ \emph{can} be constructed in such a fashion: for each $s \in S$,
+  simply choose the target of $f$ as $g(s)$. This is always possible
+  because $g$ is a bijection: for each $s' \in T$, there is an
+  $s \in D$ such that $g(s)$ uniquely maps to it. But such a construction
+  means that $f = g$, which is a contradiction.
+
+  We conclude that there are exactly $n!$ bijections from $S$ to $S$.
+  
 \end{ex}
 \end{document}
