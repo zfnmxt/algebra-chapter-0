@@ -63,9 +63,23 @@
  \[
    a~R~b \Longleftrightarrow |a - b| \leq 1
   \]
-$R$ is clearly reflexive: for all $a \in \mathbb{N}$, $|a - a| = 0 \leq 1$. $R$ is symmetric since
+  $R$ is clearly reflexive: for all $a \in \mathbb{N}$, $|a - a| = 0 \leq 1$. $R$ is symmetric since
   $|x| = |-x|$ for any $x$. However, $R$ is \emph{not} transitive: let distinct $a, b, c \in
-  \mathbb{N}$ and $a~R~b$ and $b~R~c$. Then, $|a - b| = 1$ (since $a \neq b$) and similarly $|b - c| = 1$.
-  By the triangle inequality, $|a| - 1\geq |b| \leq |c| - 1$
+  \mathbb{N}$ and $a~R~b$ and $b~R~c$. Then, $|a - b| = 1$ (since $a \neq b$) and similarly $|b - c| = 1$. Hence,
+  either $a - b = 1$ or $b - a = 1$. In the former case, $b - c = 1$ (since $c \neq a$) from which we conclude
+  that $a - c = 2$ and in the later case, $c - b = 1$, and we have $c - a = 2$ again. Hence, $|a - c| = 2$ and thus
+  $a R c$ does not hold.
+\end{ex}
+
+\begin{ex}{1.6}
+  Showing $\sim$ satisfies the required properties:
+  \begin{itemize}
+  \item reflexivity: For all $a \in \mathbb{R}$, $a -a = 0 \in \mathbb{Z}$.
+  \item symmetry: Let $a, b \in \mathbb{R}$. If $b - a \in \mathbb{Z}$, clearly $-(b - a) = a - b \in \mathbb{Z}$.
+  \item transitivity: Let $a, b, c \in \mathbb{R}$ and suppose $a \sim b$ and $b \sim c$. Then $b-a \in \mathbb{Z}$ and $c - b \in \mathbb{Z}$. Since 
+    $\mathbb{Z}$ is closed under addition, $c - a = (c-b) + (b - a) \in \mathbb{Z}$.
+
+    $\sim$ relates $a,b \in \mathbb{R}$ if they same post-decimal representation.
+  \end{itemize}
 \end{ex}
 \end{document}
