@@ -96,12 +96,14 @@
   continues until $T = \varnothing$, $f$ must also be surjective.  The
   algorithm allows for $n!$ different constructions of $f$. The only
   question that remains is if there exists a bijection $g : S
-  \rightarrow S$ which cannot be constructed in such a fashion.
-  But $g$ \emph{can} be constructed in such a fashion: for each $s \in S$,
+  \rightarrow S$ which cannot be constructed in such a fashion.  But
+  $g$ \emph{can} be constructed in such a fashion: for each $s \in S$,
   simply choose the target of $f$ as $g(s)$. This is always possible
-  because $g$ is a bijection: for each $s' \in T$, there is an
-  $s \in D$ such that $g(s)$ uniquely maps to it. But such a construction
-  means that $f = g$, which is a contradiction.
+  because $g$ is a bijection: for each $s' \in T$, there is an $s \in
+  D$ such that $g(s)$ uniquely maps to it. (And hence if is available
+  in $D$ after $m$ iterations of element removal, $g(s)$ will be
+  available in $T$.) But such a construction means that $f = g$, which
+  is a contradiction.
 
   We conclude that there are exactly $n!$ bijections from $S$ to $S$.
   
