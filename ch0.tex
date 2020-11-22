@@ -88,22 +88,22 @@
   $f(s_1) = s_1'$. Next, choose $s_2 \in D \setminus \{s_1\}, s_2' \in
   T \setminus \{s_1'\}$ and set $f(s_2) = s_2'$.  Next, choose $s_3
   \in D \setminus \{s_1, s_2\}, s_3' \in T \setminus \{s_1',s_2'\}$
-  and set $f(s_3) = s_3'$.  Continue in this manner for $n$ steps
-  (until $D = T = \varnothing$).
+  and set $f(s_3) = s_3'$.  Continue in this manner for $n$ steps.
 
   Clearly, $f$ is a bijection. If $s, s' \in S$, then $f(s) = f(s')
   \Rightarrow s = s'$ by construction.  Similarly, since the algorithm
-  continues until $T = \varnothing$, $f$ must also be surjective.  The
+  continues for $n$ steps and assigns $f$ a unique output for each
+  step. So, since $|S| = n$, $f$ must also be surjective.  The
   algorithm allows for $n!$ different constructions of $f$. The only
   question that remains is if there exists a bijection $g : S
   \rightarrow S$ which cannot be constructed in such a fashion.  But
   $g$ \emph{can} be constructed in such a fashion: for each $s \in S$,
   simply choose the target of $f$ as $g(s)$. This is always possible
   because $g$ is a bijection: for each $s' \in T$, there is an $s \in
-  D$ such that $g(s)$ uniquely maps to it. (And hence if $s$ is available
-  in $D$ after $m$ iterations of element removal, $g(s)$ will be
-  available in $T$.) But such a construction means that $f = g$, which
-  is a contradiction.
+  D$ such that $g(s)$ uniquely maps to it. (And hence if $s \in D
+  \setminus \{s_1, \dots, s_m\}$ after $m$ iterations, $g(s) \in T
+  \setminus \{s_1', \dots, s_m'\}$.) But such a construction means
+  that $f = g$, which is a contradiction.
 
   We conclude that there are exactly $n!$ bijections from $S$ to $S$.
   
