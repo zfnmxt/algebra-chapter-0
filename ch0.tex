@@ -91,10 +91,11 @@
   and set $f(s_3) = s_3'$.  Continue in this manner for $n$ steps.
 
   Clearly, $f$ is a bijection. If $s, s' \in S$, then $f(s) = f(s')
-  \Rightarrow s = s'$ by construction.  Similarly, since the algorithm
-  continues for $n$ steps and assigns $f$ a unique output for each
-  step. So, since $|S| = n$, $f$ must also be surjective.  The
-  algorithm allows for $n!$ different constructions of $f$. The only
+  \Rightarrow s = s'$ by construction.  Since the algorithm continues
+  for $n$ steps and assigns $f$ a unique output for each step, $f$
+  must also be surjective.  The algorithm allows for $n!$ different
+  constructions of $f$: at iteration $i$, we have $(n-i + 1)$ possible
+  choices to choose as the output of $f$ on the given input. The only
   question that remains is if there exists a bijection $g : S
   \rightarrow S$ which cannot be constructed in such a fashion.  But
   $g$ \emph{can} be constructed in such a fashion: for each $s \in S$,
