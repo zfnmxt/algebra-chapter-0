@@ -107,6 +107,82 @@
   that $f = g$, which is a contradiction.
 
   We conclude that there are exactly $n!$ bijections from $S$ to $S$.
-  
+\end{ex}
+
+\begin{ex}{2.2}
+
+  $(\Longrightarrow)$ Suppose $f : A \rightarrow B$ has a right-inverse, then there exists a function $g : B \rightarrow A$  such that
+  $f \circ g = \text{id}_B$. If we choose some $b \in B$, we have
+  \[
+    (f \circ g)(b) = f(g(b))  = \text{id}_B (b) = b
+  \]
+  So, for any $b \in B$, we have $g(b) \in A$ with $f(g(b)) = b$ which shows $f$ is indeed surjective.
+
+  $(\Longleftarrow)$ Now suppose $f$ is surjective. We will construct a function $g : B \rightarrow A$ such that $f \circ g = \text{id}_B$.
+  Define an equivalence relation $\sim$ by
+  \[
+    a \sim b \Longleftrightarrow f(a) = f(b)
+    \]
+    $\sim$ is clearly an equivalence relation (indeed, this is immediate by the fact that $=$ is an equivalence relation). By Exercise 1.2,
+    $\mathcal{P}_\sim$ is a partition of $A$. Define $g$ as
+    \[ g(b) = \text{choose any $c \in [a]_\sim$ with $f(a) = b$}
+    \]
+    such an $a$ is guaranteed to exist by the surjectivity of $g(b)$ and the ability to make such a choice is guaranteed by the axiom of choice.
+    The only thing left is to show that $g$ is indeed a right-inverse of $f$. To do so, let $b \in B$ and suppose $g(b) = c$ for some $c \in A$. Then,
+    \begin{align*}
+      f(g(b)) = f(c) = b
+    \end{align*}
+    by the construction of $g$.
+\end{ex}
+
+\begin{ex}{2.3}
+  Let $f : A \rightarrow B$ be a bijection with an inverse $f^{-1} : B \rightarrow A$. By definition,
+  \[ f\circ f^{-1} = \text{id}_B \qquad f^{-1} \circ f = \text{id}_A
+  \]
+  but this means that $f$ must also be an of $f^{-1}$. By Corollary 2.2, $f^{-1}$ is a bijection.
+  Now, also consider bijection $g : B \rightarrow C$. By the associativity of function composition,
+  \begin{align*}
+  (g \circ f) \circ (f^{-1} \circ g^{-1}) &= g \circ (f \circ (f^{-1}) \circ g^{-1} \\
+                                        &= g \circ \text{id}_B \circ g^{-1} \\
+                                        &= g \circ g^{-1} \\
+                                        &= \text{id}_C 
+  \end{align*}
+  and
+  \begin{align*}
+  f^{-1} \circ g^{-1} \circ g \circ f &= f^{-1} \circ (g^{-1} \circ g) \circ f   \\
+                                    &= f^{-1} \circ \text{id}_B \circ f  \\
+                                    &= f^{-1} \circ f  \\
+                                    &= \text{id}_A 
+  \end{align*}
+  By Corollarly 2.2 once again, $g \circ f$ is a bijection with inverse $f^{-1} \circ g^{-1}$.
+\end{ex}
+
+\begin{ex}{2.4}
+  Consider some set of sets $S$.
+  \begin{itemize}
+  \item reflexivity: for all $A \in S$, we have $A \cong A$ (with $\text{id}_A : A \rightarrow A$ as the bijection).
+  \item symmetry: Consider $A, B \in S$ and suppose $A \cong B$ which means there exists a bijection $f : A \rightarrow B$. By Exercise 2.3,
+    $f^{-1} : B \rightarrow A$ is also a bijection and hence $B \cong A$.
+  \item transitivity: Let $A, B, C, \in S$ and suppose $A \cong B$ and $B \cong C$, meaning there exists bijections $f : A \rightarrow B$ and
+  $g : B \rightarrow C$. By Exercise 2.3, $g \circ f : A \rightarrow C$ is a bijection, and hence $A \cong C$.
+  \end{itemize}
+\end{ex}
+\begin{ex}{2.5}
+ A function $f : A \rightarrow B$ is an \emph{epimorphism} if for all sets $Z$ and all functions $g : Z \rightarrow B$, there exists $\alpha : Z \rightarrow A$ such that $f \circ \alpha = g$. The thing to prove is now that a function $f$ is surjective if and only if it is an epimorphism.
+
+$(\Longrightarrow)$ Suppose $f$ is surjective. Define $\alpha : Z \rightarrow A$ as
+\[
+\alpha(z) = \text{$a$ where $f(a) = g(z)$}
+\]
+such an $a$ is always guaranteed to exist by the surjectivity of $f$. Now, consider an arbitrary $z \in Z$. We have,
+\[
+(f\circ \alpha)(z) = f(\alpha(z)) = g(z)
+\]
+as required.
+
+$(\Longleftarrow)$ Suppose $f$ is an epimorphism and let $g = \text{id}_B$. Since $f$ is an epimorphism, there exists a function $\alpha : B \rightarrow A$
+such that $f \circ \alpha = \text{id}_B$. But this means that $\alpha$ is a right-inverse of $f$, so by Proposition 2.1, $f$ is surjective.
+
+ 
 \end{ex}
 \end{document}
